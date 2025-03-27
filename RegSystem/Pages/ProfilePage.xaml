@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="RegSystem.Pages.ProfilePage"
+             >
+    <Grid Padding="20">
+        <!-- แบ่งเป็น 2 คอลัมน์ -->
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1.5*" />
+            <ColumnDefinition Width="2*" />
+        </Grid.ColumnDefinitions>
+
+        <!-- คอลัมน์ซ้าย: รูปภาพ, ชื่อ, ปุ่ม Logout -->
+        <StackLayout Grid.Column="0"
+                     VerticalOptions="Center"
+                     HorizontalOptions="Center">
+            <!-- รูปโปรไฟล์ -->
+            <Frame CornerRadius="100"
+                   Padding="0"
+                   Margin="0,0,0,20">
+                <Image Source="user.png"
+                       WidthRequest="150"
+                       HeightRequest="150"
+                       Aspect="AspectFill"/>
+            </Frame>
+
+            <!-- ชื่อผู้ใช้ -->
+            <Label Text="John Doe"
+                   FontSize="24"
+                   FontAttributes="Bold"
+                   HorizontalOptions="Center" />
+
+            <Label Text="johndoe@email.com"
+                   FontSize="16"
+                   TextColor="Gray"
+                   HorizontalOptions="Center"
+                   Margin="0,5,0,20"/>
+
+            <!-- ปุ่ม Logout -->
+            <Button Text="Logout"
+                    BackgroundColor="Red"
+                    TextColor="White"
+                    FontSize="18"
+                    CornerRadius="10"
+                    HeightRequest="50"
+                    WidthRequest="150"
+                    HorizontalOptions="Center"
+                    Clicked="OnLogoutClicked"/>
+        </StackLayout>
+
+        <!-- คอลัมน์ขวา: หัวข้อ "วิชาที่ลงทะเบียน" -->
+        <StackLayout Grid.Column="1"
+                     Padding="20"
+                     VerticalOptions="Start">
+            <Label Text="วิชาที่ลงทะเบียน"
+                   FontSize="24"
+                   FontAttributes="Bold"
+                   HorizontalOptions="Start"
+                   Margin="0,10,0,0"/>
+        </StackLayout>
+    </Grid>
+</ContentPage>
