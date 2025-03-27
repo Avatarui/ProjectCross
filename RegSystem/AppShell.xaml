@@ -8,8 +8,8 @@
     Title="RegSystem">
 
     <ShellContent
-        Title="Home"
-        ContentTemplate="{DataTemplate local:MainPage}"
+        Title=""
+        ContentTemplate="{DataTemplate local:Pages.ProfilePage}"
         Route="MainPage" />
 
 </Shell>
