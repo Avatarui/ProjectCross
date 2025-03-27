@@ -1,101 +1,152 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:vm="clr-namespace:RegSystem.ViewModel"
+             xmlns:viewmodel="clr-namespace:MiniprojectCross.ViewModel"
              x:Class="RegSystem.Pages.LoginPage"
-             BackgroundColor="#F5F5F5">
-
-    <!-- ตั้งค่า ViewModel -->
+             x:DataType="viewmodel:ShowDataStudent"
+             Title="ระบบลงทะเบียนเรียน">
     <ContentPage.BindingContext>
-        <vm:LoginViewModel />
+        <viewmodel:ShowDataStudent />
     </ContentPage.BindingContext>
-
     <Grid>
-        <Image Source="university.jpg"
-               Aspect="AspectFill"
-               Opacity="0.3" />
+        <!-- Background with yellow and gray gradient -->
+        <BoxView>
+            <BoxView.Background>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                    <GradientStop Color="#FFD700" Offset="0.0" />
+                    <GradientStop Color="#f0f0f0" Offset="0.6" />
+                    <GradientStop Color="#777777" Offset="1.0" />
+                </LinearGradientBrush>
+            </BoxView.Background>
+        </BoxView>
+        
+        <!-- Decorative elements -->
+        <BoxView Color="#FFD700" Opacity="0.3"
+                 HeightRequest="200" WidthRequest="200"
+                 HorizontalOptions="End" VerticalOptions="Start"
+                 CornerRadius="100" Margin="-50,-50,0,0" />
+                 
+        <BoxView Color="#666666" Opacity="0.4"
+                 HeightRequest="150" WidthRequest="150"
+                 HorizontalOptions="Start" VerticalOptions="End"
+                 CornerRadius="75" Margin="-30,0,0,-30" />
+                 
+        <ScrollView>
+            <VerticalStackLayout Spacing="20" Padding="30" VerticalOptions="Center">
+                <!-- Compact Login Form with yellow-gray theme -->
+                <Frame BorderColor="#CCCCCC" 
+                       CornerRadius="15" 
+                       Padding="20" 
+                       HasShadow="True" 
+                       BackgroundColor="#FFFFEE"
+                       Opacity="0.95"
+                       WidthRequest="750"
+                       HorizontalOptions="Center"
+                       Margin="0,20,0,20">
+                    <VerticalStackLayout Spacing="12">
+                        <!-- Logo and header -->
+                        <Image Source="app_logo.png" 
+                               HeightRequest="120" 
+                               HorizontalOptions="Center" />
+                               
+                        <Label Text="ระบบลงทะเบียนเรียนนิสิต"
+                               FontSize="22"
+                               FontAttributes="Bold"
+                               HorizontalOptions="Center"
+                               TextColor="#333333" />
+                               
+                        <Label Text="กรุณาเข้าสู่ระบบ"
+                               FontSize="16"
+                               HorizontalOptions="Center"
+                               TextColor="#666666"
+                               Margin="0,0,0,8" />
+                               
+                        <!-- Email Field -->
+                        <Label Text="อีเมล" 
+                               FontSize="14" 
+                               TextColor="#444444" 
+                               FontAttributes="Bold"
+                               Margin="0,0,0,-5" />
+                               
+                        <Frame BorderColor="#DDDDDD" 
+                               Padding="12,0" 
+                               HasShadow="False" 
+                               CornerRadius="8" 
+                               BackgroundColor="#FFFEF5"
+                               HeightRequest="45">
+                            <Entry Text="{Binding Email}" 
+                                   Placeholder="example@email.com"
+                                   PlaceholderColor="#AAAAAA"
+                                   TextColor="#333333"
+                                   Keyboard="Email"
+                                   VerticalOptions="Center"
+                                   FontSize="14" />
+                        </Frame>
 
-        <VerticalStackLayout VerticalOptions="Center"
-                            Padding="30">
-            <Frame Padding="20"
-                   CornerRadius="15"
-                   BackgroundColor="White"
-                   Opacity="0.95"
-                   HorizontalOptions="Center"
-                   WidthRequest="300"
-                   HeightRequest="400">
-                <VerticalStackLayout Spacing="15">
-                    <!-- รูปผู้ใช้ -->
-                    <Image Source="user.png"
-                           WidthRequest="80"
-                           HeightRequest="80"
-                           HorizontalOptions="Center" />
+                        <!-- Password Field -->
+                        <Label Text="รหัสผ่าน" 
+                               FontSize="14" 
+                               TextColor="#444444" 
+                               FontAttributes="Bold"
+                               Margin="0,0,0,-5" />
+                               
+                        <Frame BorderColor="#DDDDDD" 
+                               Padding="12,0" 
+                               HasShadow="False" 
+                               CornerRadius="8" 
+                               BackgroundColor="#FFFEF5"
+                               HeightRequest="45">
+                            <Entry Text="{Binding Password}"
+                                   IsPassword="True" 
+                                   Placeholder="กรอกรหัสผ่าน"
+                                   PlaceholderColor="#AAAAAA"
+                                   TextColor="#333333"
+                                   VerticalOptions="Center"
+                                   FontSize="14" />
+                        </Frame>
 
-                    <!-- Email Input -->
-                    <Label Text="Email"
-                           FontSize="14"
-                           TextColor="#333333" />
-                    <Entry Placeholder="อีเมล (Email)"
-                           Keyboard="Email"
-                           HorizontalTextAlignment="Center"
-                           Text="{Binding Username}"
-                           ReturnType="Next" />
+                        <!-- Remember Me Checkbox -->
+                        <HorizontalStackLayout Margin="0,5,0,0">
+                            <CheckBox x:Name="RememberMeCheckbox" 
+                                      Color="#FFD700"
+                                      Scale="0.9" />
+                            <Label Text="จำข้อมูลเข้าสู่ระบบ" 
+                                   VerticalOptions="Center"
+                                   TextColor="#555555"
+                                   FontSize="13"
+                                   Margin="2,0,0,0" />
+                        </HorizontalStackLayout>
 
-                    <!-- Password Input -->
-                    <Label Text="Password"
-                           FontSize="14"
-                           TextColor="#333333" />
-                    <Entry Placeholder="รหัสผ่าน (Password)"
-                           IsPassword="True"
-                           HorizontalTextAlignment="Center"
-                           Text="{Binding Password}"
-                           ReturnType="Go"
-                           Completed="LoginCommand.Execute(null)" />
+                        <!-- Login Button with university colors -->
+                        <Button Command="{Binding CheckLoginCommand}"
+                                Text="เข้าสู่ระบบ" 
+                                BackgroundColor="#FFD700"
+                                TextColor="#333333"
+                                FontAttributes="Bold"
+                                Margin="0,8,0,5"
+                                HeightRequest="46"
+                                CornerRadius="23" />
 
-                    <!-- ปุ่ม Login -->
-                    <Button Text="เข้าสู่ระบบ (Login)"
-                            BackgroundColor="#FF4F00E2"
-                            TextColor="White"
-                            CornerRadius="9"
-                            Margin="0,20,0,0"
-                            Command="{Binding LoginCommand}" />
-
-                    <!-- สมัครสมาชิก & ลืมรหัสผ่าน -->
-                    <HorizontalStackLayout HorizontalOptions="Center"
-                                         Spacing="80"
-                                         Margin="0,15,0,0">
-                        <Label Text="สมัครสมาชิก (Register)"
-                               TextColor="#4F00E2"
-                               FontSize="13">
-                            <Label.GestureRecognizers>
-                                <TapGestureRecognizer Command="{Binding GoToPageCommand}"
-                                                    CommandParameter="register" />
-                            </Label.GestureRecognizers>
-                        </Label>
-                        <Label Text="ลืมรหัสผ่าน? (Forgot Password?)"
-                               TextColor="#4F00E2"
-                               FontSize="13">
+                        <!-- Forgot Password -->
+                        <Label Text="ลืมรหัสผ่าน?" 
+                               HorizontalOptions="Center"
+                               TextColor="#666666"
+                               FontSize="14"
+                               TextDecorations="Underline">
                             <Label.GestureRecognizers>
                                 <TapGestureRecognizer Command="{Binding ForgotPasswordCommand}" />
                             </Label.GestureRecognizers>
                         </Label>
-                    </HorizontalStackLayout>
-                </VerticalStackLayout>
-            </Frame>
-
-            <!-- Copyright -->
-            <Label Text="Copyright © 2024. Cross Platform App. CSMSU."
-                   HorizontalOptions="Center"
-                   TextColor="White"
-                   FontSize="12"
-                   Margin="0,20" />
-        </VerticalStackLayout>
-
-        <!-- กำลังโหลด -->
-        <ActivityIndicator IsRunning="{Binding IsBusy}"
-                         Color="#4F00E2"
-                         IsVisible="{Binding IsBusy}"
-                         VerticalOptions="Center"
-                         HorizontalOptions="Center" />
+                    </VerticalStackLayout>
+                </Frame>
+                
+                <!-- Version info -->
+                <Label Text="Version 1.0.0" 
+                       HorizontalOptions="Center" 
+                       TextColor="#444444" 
+                       FontSize="12" 
+                       Opacity="0.8" />
+            </VerticalStackLayout>
+        </ScrollView>
     </Grid>
 </ContentPage>

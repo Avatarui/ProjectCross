@@ -2,14 +2,14 @@ using MiniprojectCross.ViewModel;
 
 namespace RegSystem.Pages;
 
-public partial class ProfilePage : ContentPage
+public partial class CurrentTermRegistrationPage : ContentPage
 {
-	public ProfilePage()
+	public CurrentTermRegistrationPage()
 	{
 		InitializeComponent();
 		BindingContext = new ShowDataStudent();
 	}
-	private async void OnDetailsClickedback(object sender, EventArgs e)
+	private async void OnClickedHome(object sender, EventArgs e)
 	{
 		await Navigation.PopAsync();
 	}
