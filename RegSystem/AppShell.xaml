@@ -8,8 +8,14 @@
     Title="RegSystem">
 
     <ShellContent
-        Title=""
+        Title="Login Page"
+        ContentTemplate="{DataTemplate local:Pages.LoginPage}"
+        Route="LoginPage"/>
+
+    <!-- กำหนดหน้า ProfilePage -->
+    <ShellContent
+        Title="Profile Page"
         ContentTemplate="{DataTemplate local:Pages.ProfilePage}"
-        Route="MainPage" />
+        Route="ProfilePage"/>
 
 </Shell>

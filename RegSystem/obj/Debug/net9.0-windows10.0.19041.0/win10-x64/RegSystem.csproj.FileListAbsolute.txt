@@ -470,3 +470,7 @@ D:\Project\ProjectCross\RegSystem\obj\Debug\net9.0-windows10.0.19041.0\win10-x64
 D:\Project\ProjectCross\RegSystem\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\qualifiers.txt
 D:\Project\ProjectCross\RegSystem\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\qualifiers.txt.intermediate
 D:\Project\ProjectCross\RegSystem\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\MultipleQualifiersPerDimensionFound.txt
+D:\Project\ProjectCross\RegSystem\bin\Debug\net9.0-windows10.0.19041.0\win10-x64\univeresity.scale-100.jpg
+D:\Project\ProjectCross\RegSystem\bin\Debug\net9.0-windows10.0.19041.0\win10-x64\user.scale-100.png
+D:\Project\ProjectCross\RegSystem\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\resizetizer\r\univeresity.scale-100.jpg
+D:\Project\ProjectCross\RegSystem\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\resizetizer\r\user.scale-100.png
