@@ -26417,11 +26417,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Project\\RegSystem\\RegSystem.csproj",
+      "projectUniqueName": "D:\\Project\\ProjectCross\\RegSystem\\RegSystem.csproj",
       "projectName": "RegSystem",
-      "projectPath": "D:\\Project\\RegSystem\\RegSystem.csproj",
+      "projectPath": "D:\\Project\\ProjectCross\\RegSystem\\RegSystem.csproj",
       "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-      "outputPath": "D:\\Project\\RegSystem\\obj\\",
+      "outputPath": "D:\\Project\\ProjectCross\\RegSystem\\obj\\",
       "projectStyle": "PackageReference",
       "crossTargeting": true,
       "configFilePaths": [

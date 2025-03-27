@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="RegSystem.Pages.LoginPage"
+             >
+    <Grid>
+              <Image Source="univeresity.jpg"
+                     Aspect="AspectFill"/>
+
+              <VerticalStackLayout VerticalOptions="Center">
+                     <Frame Padding="20"
+                            CornerRadius="15"
+                            BackgroundColor="white"
+                            Opacity="0.9"
+                            HorizontalOptions="Center"
+                            WidthRequest="300"
+                            HeightRequest="380">
+                            <VerticalStackLayout Spacing="10">
+                                   <Image Source="user.png"
+                                          WidthRequest="60" BackgroundColor="white"></Image>
+                                   <Label Text="Username"
+                                          FontSize="13"></Label>
+                                   <Entry  Placeholder="ชื่อผู้ใช้"
+                                           HorizontalTextAlignment="Center"
+                                           Text="{Binding Username}"/>
+                                   <Label Text="Password"
+                                          FontSize="13"></Label>
+                                   <Entry Placeholder="รหัสผ่าน"
+                                          IsPassword="True"
+                                          HorizontalTextAlignment="Center"
+                                          Text="{Binding Password}"/>
+                                   <Button Text="Login"
+                                           BackgroundColor="#FF4F00E2"
+                                           TextColor="White"
+                                           CornerRadius="9"
+                                           Margin="0,13"
+                                           Command="{Binding LoginCommand}"/>
+                                   <HorizontalStackLayout HorizontalOptions="Center"
+                                                          Spacing="100">
+                                          <Label Text="Register">
+                                                 <Label.GestureRecognizers>
+                                                        <TapGestureRecognizer Command="{Binding GoToPageCommand}"
+                                                                              CommandParameter="register"></TapGestureRecognizer>
+                                                 </Label.GestureRecognizers>
+                                          </Label>
+                                          <Label Text="Forget Password?"
+                                                 FontSize="13">
+                                                 <Label.GestureRecognizers>
+                                                        <TapGestureRecognizer Tapped="ForgetPasswordTapped"></TapGestureRecognizer>
+                                                 </Label.GestureRecognizers>
+                                          </Label>
+                                   </HorizontalStackLayout>
+
+                            </VerticalStackLayout>
+                     </Frame>
+                     <Label Text="Copyright © 2024. Cross Platform App. CSMSU."
+                            HorizontalOptions="Center"
+                            TextColor="White"
+                            FontSize="14"
+                            Margin="0,14"/>
+              </VerticalStackLayout>
+       </Grid>
+</ContentPage>
