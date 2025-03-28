@@ -40,35 +40,11 @@ build_metadata.AdditionalFiles.ManifestResourceName = RegSystem.MainPage.xaml
 build_metadata.AdditionalFiles.TargetPath = MainPage.xaml
 build_metadata.AdditionalFiles.RelativePath = MainPage.xaml
 
-[D:/Project/ProjectCross/RegSystem/Pages/CourseRegistrationPage.xaml]
-build_metadata.AdditionalFiles.GenKind = Xaml
-build_metadata.AdditionalFiles.ManifestResourceName = RegSystem.Pages.CourseRegistrationPage.xaml
-build_metadata.AdditionalFiles.TargetPath = Pages\CourseRegistrationPage.xaml
-build_metadata.AdditionalFiles.RelativePath = Pages\CourseRegistrationPage.xaml
-
-[D:/Project/ProjectCross/RegSystem/Pages/CourseWithdrawPage.xaml]
-build_metadata.AdditionalFiles.GenKind = Xaml
-build_metadata.AdditionalFiles.ManifestResourceName = RegSystem.Pages.CourseWithdrawPage.xaml
-build_metadata.AdditionalFiles.TargetPath = Pages\CourseWithdrawPage.xaml
-build_metadata.AdditionalFiles.RelativePath = Pages\CourseWithdrawPage.xaml
-
-[D:/Project/ProjectCross/RegSystem/Pages/CurrentTermRegistrationPage.xaml]
-build_metadata.AdditionalFiles.GenKind = Xaml
-build_metadata.AdditionalFiles.ManifestResourceName = RegSystem.Pages.CurrentTermRegistrationPage.xaml
-build_metadata.AdditionalFiles.TargetPath = Pages\CurrentTermRegistrationPage.xaml
-build_metadata.AdditionalFiles.RelativePath = Pages\CurrentTermRegistrationPage.xaml
-
 [D:/Project/ProjectCross/RegSystem/Pages/LoginPage.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = RegSystem.Pages.LoginPage.xaml
 build_metadata.AdditionalFiles.TargetPath = Pages\LoginPage.xaml
 build_metadata.AdditionalFiles.RelativePath = Pages\LoginPage.xaml
-
-[D:/Project/ProjectCross/RegSystem/Pages/PastTermRegistrationPage.xaml]
-build_metadata.AdditionalFiles.GenKind = Xaml
-build_metadata.AdditionalFiles.ManifestResourceName = RegSystem.Pages.PastTermRegistrationPage.xaml
-build_metadata.AdditionalFiles.TargetPath = Pages\PastTermRegistrationPage.xaml
-build_metadata.AdditionalFiles.RelativePath = Pages\PastTermRegistrationPage.xaml
 
 [D:/Project/ProjectCross/RegSystem/Pages/ProfilePage.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml

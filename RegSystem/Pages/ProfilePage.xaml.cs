@@ -1,16 +1,11 @@
-using MiniprojectCross.ViewModel;
-
 namespace RegSystem.Pages;
-
 public partial class ProfilePage : ContentPage
 {
-	public ProfilePage()
-	{
-		InitializeComponent();
-		BindingContext = new ShowDataStudent();
-	}
-	private async void OnDetailsClickedback(object sender, EventArgs e)
-	{
-		await Navigation.PopAsync();
-	}
+    public ProfilePage()
+    {
+        InitializeComponent();
+    }
+    private  void OnLogoutClicked(object sender, EventArgs e)
+    {
+    }
 }
