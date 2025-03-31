@@ -3,103 +3,146 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:viewmodel="clr-namespace:RegSystem.ViewModels"
              x:Class="RegSystem.Pages.ProfilePage"
+             BackgroundImageSource="univeresity.jpg"
+             Opacity="0.9"
              Title="ข้อมูลนักศึกษา">
 
-    <ContentPage.BindingContext>
-        <viewmodel:ProfilePageViewModel />
-    </ContentPage.BindingContext>
+       <ContentPage.BindingContext>
+              <viewmodel:ProfilePageViewModel/>
+       </ContentPage.BindingContext>
 
-    <Grid Padding="20">
-        <!-- แบ่งเป็น 2 คอลัมน์ -->
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="1.5*" />
-            <ColumnDefinition Width="2*" />
-        </Grid.ColumnDefinitions>
+       <Grid Padding="20">
+              <!-- แบ่งเป็น 2 คอลัมน์ -->
+              <Grid.ColumnDefinitions>
+                     <ColumnDefinition Width="1*"/>
+                     <ColumnDefinition Width="2*"/>
+              </Grid.ColumnDefinitions>
 
-        <!-- คอลัมน์ซ้าย: รูปภาพ, ชื่อ, ปุ่ม Logout -->
-        <VerticalStackLayout Grid.Column="0"
-                             VerticalOptions="Center"
-                             HorizontalOptions="Center">
+              <!-- คอลัมน์ซ้าย: รูปภาพ, ชื่อ, ปุ่ม Logout -->
+              <VerticalStackLayout Grid.Column="0"
+                                   VerticalOptions="Center"
+                                   HorizontalOptions="Fill"
+                                   Padding="30"
+                                   BackgroundColor="White"
+                                   WidthRequest="450"
+                                   HeightRequest="550">
 
-            <!-- รูปโปรไฟล์ -->
-            <Border StrokeShape="RoundRectangle 100"
-                    StrokeThickness="2"
-                    BackgroundColor="Transparent"
-                    Padding="0"
-                    Margin="0,0,0,20">
-                <Image Source="{Binding ProfileImage}"
-                       WidthRequest="150"
-                       HeightRequest="150"
-                       Aspect="AspectFill"/>
-            </Border>
+                     <!-- รูปโปรไฟล์ -->
 
-            <!-- ชื่อผู้ใช้ -->
-            <Label Text="{Binding FullName}"
-                   FontSize="24"
-                   FontAttributes="Bold"
-                   HorizontalOptions="Center" />
+                     <Image Source="{Binding ProfileImage}"
+                            WidthRequest="100"
+                            HeightRequest="150"
+                            Aspect="AspectFill"
+                            Margin="0,0,0,20"
+                            HorizontalOptions="Center"
+                            VerticalOptions="Center"/>
 
-            <Label Text="{Binding Email}"
+                     <Label Text="{Binding StudentId}"
+                            FontSize="16"
+                            FontAttributes="Bold"
+                            HorizontalOptions="Center"
+                            VerticalOptions="Center"
+                            Margin="0,0,0,10"/>
+                     <!-- ชื่อผู้ใช้ -->
+                     <Label Text="{Binding FullName}"
+                            FontSize="18"
+                            FontAttributes="Bold"
+                            HorizontalOptions="Center"
+                            VerticalOptions="Center"/>
+
+                     <!-- <Label Text="{Binding Email}"
                    FontSize="16"
                    TextColor="Gray"
                    HorizontalOptions="Center"
-                   Margin="0,5,0,10"/>
-                   
-            <Label Text="{Binding StudentId}"
-                   FontSize="18"
-                   FontAttributes="Bold"
-                   HorizontalOptions="Center" 
-                   Margin="0,0,0,10"/>
-                   
-            <Label Text="{Binding Department}"
-                   FontSize="16"
-                   HorizontalOptions="Center" />
-                   
-            <Label Text="{Binding Faculty}"
-                   FontSize="16"
-                   HorizontalOptions="Center"
-                   Margin="0,0,0,10"/>
-                   
-            <Label Text="{Binding Year}"
-                   FontSize="16"
-                   HorizontalOptions="Center" />
-                   
-            <Label Text="{Binding Gpax}"
-                   FontSize="16"
-                   HorizontalOptions="Center" 
-                   Margin="0,0,0,10"/>
-                   
-            <Label Text="{Binding Status}"
-                   FontSize="16"
-                   FontAttributes="Bold"
-                   TextColor="Green"
-                   HorizontalOptions="Center" 
-                   Margin="0,0,0,20"/>
+                   Margin="0,5,0,10"/> -->
 
-            <!-- ปุ่ม Logout -->
-            <Button Text="Logout"
-                    BackgroundColor="Red"
-                    TextColor="White"
-                    FontSize="18"
-                    CornerRadius="10"
-                    HeightRequest="50"
-                    WidthRequest="150"
-                    HorizontalOptions="Center"
-                    Clicked="OnLogoutClicked"/>
-        </VerticalStackLayout>
 
-        <!-- คอลัมน์ขวา: หัวข้อ "วิชาที่ลงทะเบียน" -->
-        <VerticalStackLayout Grid.Column="1"
-                             Padding="20"
-                             VerticalOptions="Start">
-            <Label Text="วิชาที่ลงทะเบียน"
-                   FontSize="24"
-                   FontAttributes="Bold"
-                   HorizontalOptions="Start"
-                   Margin="0,10,0,0"/>
-                   
-            <!-- ต่อไปนี้คุณสามารถเพิ่ม CollectionView สำหรับแสดงรายวิชาได้ -->
-        </VerticalStackLayout>
-    </Grid>
+
+                     <Label Text="{Binding Department}"
+                            FontSize="16"
+                            HorizontalOptions="Center"
+                            VerticalOptions="Center"/>
+
+                     <Label Text="{Binding Faculty}"
+                            FontSize="16"
+                            HorizontalOptions="Center"
+                            VerticalOptions="Center"
+                            Margin="0,0,0,10"/>
+
+                     <Label Text="{Binding Year}"
+                            FontSize="16"
+                            HorizontalOptions="Center"
+                            VerticalOptions="Center"/>
+
+                     <!-- <Label Text="{Binding Gpax}"
+                   FontSize="16"
+                   HorizontalOptions="Center" 
+                   Margin="0,0,0,10"/> -->
+
+                     <Label Text="{Binding Status}"
+                            FontSize="16"
+                            FontAttributes="Bold"
+                            TextColor="Green"
+                            HorizontalOptions="Center"
+                            VerticalOptions="Center"
+                            Margin="0,0,0,20"/>
+
+                     <!-- ปุ่ม Logout -->
+                     <Button Text="Logout"
+                             BackgroundColor="Red"
+                             TextColor="White"
+                             FontSize="18"
+                             CornerRadius="10"
+                             HeightRequest="50"
+                             WidthRequest="150"
+                             HorizontalOptions="Center"
+                             VerticalOptions="Center"
+                             Clicked="OnLogoutClicked"
+                             Margin="0,0,0,20"/>
+              </VerticalStackLayout>
+
+              <!-- คอลัมน์ขวา: หัวข้อ "วิชาที่ลงทะเบียน" -->
+              <VerticalStackLayout Grid.Column="1"
+                                   Spacing="15"
+                                   Padding="20"
+                                   VerticalOptions="Center">
+                     <Button Text="ข้อมูลลงทะเบียน เทอมปัจจุบัน"
+                             BackgroundColor="#FFD700"
+                             TextColor="Black"
+                             FontSize="16"
+                             CornerRadius="10"
+                             HeightRequest="60"
+                             Clicked="OnCurrentRegistrationClicked"/>
+
+                     <!-- ข้อมูลลงทะเบียน เทอมก่อนหน้า -->
+                     <Button Text="ข้อมูลลงทะเบียน เทอมก่อนหน้า"
+                             BackgroundColor="#FFD700"
+                             TextColor="Black"
+                             FontSize="16"
+                             CornerRadius="10"
+                             HeightRequest="60"
+                             Clicked="OnPreviousRegistrationClicked"/>
+
+                     <!-- ค้นหาและลงทะเบียนรายวิชา -->
+                     <Button Text="ค้นหาและลงทะเบียนรายวิชา"
+                             BackgroundColor="#00AB55"
+                             TextColor="White"
+                             FontSize="16"
+                             CornerRadius="10"
+                             HeightRequest="60"
+                             Clicked="OnSearchAndRegisterClicked"/>
+
+                     <!-- ถอนรายวิชา -->
+                     <Button Text="ถอนรายวิชา&#10;ถึง 31 มี.ค. 2568"
+                             BackgroundColor="Red"
+                             TextColor="White"
+                             FontSize="16"
+                             CornerRadius="10"
+                             HeightRequest="60"
+                             Clicked="OnWithdrawClicked"/>
+
+                     <!-- ต่อไปนี้คุณสามารถเพิ่ม CollectionView สำหรับแสดงรายวิชาได้ -->
+              </VerticalStackLayout>
+       </Grid>
 
 </ContentPage>

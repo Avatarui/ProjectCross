@@ -22,5 +22,24 @@ namespace RegSystem.Pages
                 await Shell.Current.GoToAsync("///MainPage");
             }
         }
+        private async void OnSearchAndRegisterClicked(object sender, EventArgs e)
+        {
+            
+        }
+
+        private async void OnCurrentRegistrationClicked(object sender, EventArgs e)
+        {
+            
+        }
+
+        private async void OnPreviousRegistrationClicked(object sender, EventArgs e)
+        {
+            
+        }
+
+        private async void OnWithdrawClicked(object sender, EventArgs e)
+        {
+            
+        }
     }
 }
