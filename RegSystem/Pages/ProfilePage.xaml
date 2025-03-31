@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="RegSystem.Pages.ProfilePage">
+             xmlns:viewmodel="clr-namespace:RegSystem.ViewModels"
+             x:Class="RegSystem.Pages.ProfilePage"
+             Title="ข้อมูลนักศึกษา">
+
+    <ContentPage.BindingContext>
+        <viewmodel:ProfilePageViewModel />
+    </ContentPage.BindingContext>
 
     <Grid Padding="20">
         <!-- แบ่งเป็น 2 คอลัมน์ -->
@@ -21,23 +27,54 @@
                     BackgroundColor="Transparent"
                     Padding="0"
                     Margin="0,0,0,20">
-                <Image Source="user.png"
+                <Image Source="{Binding ProfileImage}"
                        WidthRequest="150"
                        HeightRequest="150"
                        Aspect="AspectFill"/>
             </Border>
 
             <!-- ชื่อผู้ใช้ -->
-            <Label Text="John Doe"
+            <Label Text="{Binding FullName}"
                    FontSize="24"
                    FontAttributes="Bold"
                    HorizontalOptions="Center" />
 
-            <Label Text="johndoe@email.com"
+            <Label Text="{Binding Email}"
                    FontSize="16"
                    TextColor="Gray"
                    HorizontalOptions="Center"
-                   Margin="0,5,0,20"/>
+                   Margin="0,5,0,10"/>
+                   
+            <Label Text="{Binding StudentId}"
+                   FontSize="18"
+                   FontAttributes="Bold"
+                   HorizontalOptions="Center" 
+                   Margin="0,0,0,10"/>
+                   
+            <Label Text="{Binding Department}"
+                   FontSize="16"
+                   HorizontalOptions="Center" />
+                   
+            <Label Text="{Binding Faculty}"
+                   FontSize="16"
+                   HorizontalOptions="Center"
+                   Margin="0,0,0,10"/>
+                   
+            <Label Text="{Binding Year}"
+                   FontSize="16"
+                   HorizontalOptions="Center" />
+                   
+            <Label Text="{Binding Gpax}"
+                   FontSize="16"
+                   HorizontalOptions="Center" 
+                   Margin="0,0,0,10"/>
+                   
+            <Label Text="{Binding Status}"
+                   FontSize="16"
+                   FontAttributes="Bold"
+                   TextColor="Green"
+                   HorizontalOptions="Center" 
+                   Margin="0,0,0,20"/>
 
             <!-- ปุ่ม Logout -->
             <Button Text="Logout"
@@ -60,6 +97,8 @@
                    FontAttributes="Bold"
                    HorizontalOptions="Start"
                    Margin="0,10,0,0"/>
+                   
+            <!-- ต่อไปนี้คุณสามารถเพิ่ม CollectionView สำหรับแสดงรายวิชาได้ -->
         </VerticalStackLayout>
     </Grid>
 

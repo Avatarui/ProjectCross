@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"             
              x:Class="RegSystem.Pages.LoginPage">
 
     <Grid>
@@ -46,17 +46,17 @@
                     <HorizontalStackLayout HorizontalOptions="Center"
                                            Spacing="100">
                         <Label Text="Register">
-                            <Label.GestureRecognizers>
+                            <!-- <Label.GestureRecognizers>
                                 <TapGestureRecognizer Command="{Binding GoToPageCommand}"
                                                       CommandParameter="register" />
-                            </Label.GestureRecognizers>
+                            </Label.GestureRecognizers> -->
                         </Label>
 
                         <Label Text="Forget Password?"
                                FontSize="13">
-                            <Label.GestureRecognizers>
+                            <!-- <Label.GestureRecognizers>
                                 <TapGestureRecognizer Tapped="ForgetPasswordTapped" />
-                            </Label.GestureRecognizers>
+                            </Label.GestureRecognizers> -->
                         </Label>
                     </HorizontalStackLayout>
 
