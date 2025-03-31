@@ -50,11 +50,11 @@
                             HorizontalOptions="Center"
                             VerticalOptions="Center"/>
 
-                     <!-- <Label Text="{Binding Email}"
-                   FontSize="16"
-                   TextColor="Gray"
-                   HorizontalOptions="Center"
-                   Margin="0,5,0,10"/> -->
+                     <Label Text="{Binding Email}"
+                            FontSize="16"
+                            TextColor="Gray"
+                            HorizontalOptions="Center"
+                            Margin="0,5,0,10"/>
 
 
 
@@ -74,10 +74,10 @@
                             HorizontalOptions="Center"
                             VerticalOptions="Center"/>
 
-                     <!-- <Label Text="{Binding Gpax}"
-                   FontSize="16"
-                   HorizontalOptions="Center" 
-                   Margin="0,0,0,10"/> -->
+                     <Label Text="{Binding Gpax}"
+                            FontSize="16"
+                            HorizontalOptions="Center"
+                            Margin="0,0,0,10"/>
 
                      <Label Text="{Binding Status}"
                             FontSize="16"
@@ -116,7 +116,7 @@
 
                      <!-- ข้อมูลลงทะเบียน เทอมก่อนหน้า -->
                      <Button Text="ข้อมูลลงทะเบียน เทอมก่อนหน้า"
-                             BackgroundColor="#FFD700"
+                             BackgroundColor="#FF438D12"
                              TextColor="Black"
                              FontSize="16"
                              CornerRadius="10"
@@ -133,13 +133,13 @@
                              Clicked="OnSearchAndRegisterClicked"/>
 
                      <!-- ถอนรายวิชา -->
-                     <Button Text="ถอนรายวิชา&#10;ถึง 31 มี.ค. 2568"
+                     <!-- <Button Text="ถอนรายวิชา&#10;ถึง 31 มี.ค. 2568"
                              BackgroundColor="Red"
                              TextColor="White"
                              FontSize="16"
                              CornerRadius="10"
                              HeightRequest="60"
-                             Clicked="OnWithdrawClicked"/>
+                             Clicked="OnWithdrawClicked"/> -->
 
                      <!-- ต่อไปนี้คุณสามารถเพิ่ม CollectionView สำหรับแสดงรายวิชาได้ -->
               </VerticalStackLayout>

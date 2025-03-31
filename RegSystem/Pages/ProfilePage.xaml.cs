@@ -1,5 +1,6 @@
 using Microsoft.Maui.Controls;
-using Microsoft.Maui.Storage; // เพิ่ม namespace นี้
+using Microsoft.Maui.Storage;
+using RegSystem.ViewModels; // เพิ่ม namespace นี้
 
 namespace RegSystem.Pages
 {
@@ -24,22 +25,23 @@ namespace RegSystem.Pages
         }
         private async void OnSearchAndRegisterClicked(object sender, EventArgs e)
         {
+            await Shell.Current.GoToAsync("///Registration");
             
         }
 
         private async void OnCurrentRegistrationClicked(object sender, EventArgs e)
         {
-            
+            await Shell.Current.GoToAsync("///Current");
         }
 
         private async void OnPreviousRegistrationClicked(object sender, EventArgs e)
         {
-            
+             await Shell.Current.GoToAsync("///Previous");
         }
 
-        private async void OnWithdrawClicked(object sender, EventArgs e)
-        {
-            
-        }
+        // private async void OnWithdrawClicked(object sender, EventArgs e)
+        // {
+        //      await Shell.Current.GoToAsync("///Withdraw");
+        // }
     }
 }
