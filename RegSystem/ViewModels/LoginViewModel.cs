@@ -8,44 +8,44 @@ namespace RegSystem.ViewModels;
 
 public class LoginViewModel : INotifyPropertyChanged
 {
-	private string _username = "";
-	private string _password = "";
-	private StudentData? _studentData;
+  private string _username = "";
+  private string _password = "";
+  private StudentData? _studentData;
 
-	public string Username
-	{
-		get => _username;
-		set
-		{
-			_username = value;
-			OnPropertyChanged(nameof(Username));
-		}
-	}
+  public string Username
+  {
+    get => _username;
+    set
+    {
+      _username = value;
+      OnPropertyChanged(nameof(Username));
+    }
+  }
 
-	public string Password
-	{
-		get => _password;
-		set
-		{
-			_password = value;
-			OnPropertyChanged(nameof(Password));
-		}
-	}
+  public string Password
+  {
+    get => _password;
+    set
+    {
+      _password = value;
+      OnPropertyChanged(nameof(Password));
+    }
+  }
 
-	public ICommand LoginCommand { get; }
+  public ICommand LoginCommand { get; }
 
-	public LoginViewModel()
-	{
-		LoadStudentData();
-		LoginCommand = new Command(OnLogin);
+  public LoginViewModel()
+  {
+    LoadStudentData();
+    LoginCommand = new Command(OnLogin);
 
-	}
+  }
 
-	private void LoadStudentData()
-	{
-		try
-		{
-			string jsonString = @"{
+  private void LoadStudentData()
+  {
+    try
+    {
+      string jsonString = @"{
             ""student"": {
               ""id"": ""6310500456"",
               ""email"": ""kanokwan.s@student.ku.ac.th"",
@@ -246,60 +246,73 @@ public class LoginViewModel : INotifyPropertyChanged
             ]
         }";
 
-			_studentData = JsonSerializer.Deserialize<StudentData>(jsonString);
+      _studentData = JsonSerializer.Deserialize<StudentData>(jsonString);
 
-			if (_studentData?.Student != null)
-			{
-				Console.WriteLine("✅ JSON Loaded Successfully!");
-				Console.WriteLine($"📧 Loaded Username: {_studentData.Student.Email}");
-				Console.WriteLine($"🔑 Loaded Password: {_studentData.Student.Password}");
-			}
-			else
-			{
-				Console.WriteLine("❌ Failed to load student data.");
-			}
-		}
-		catch (Exception ex)
-		{
-			Console.WriteLine($"❌ Error loading student data: {ex.Message}");
-		}
-	}
-
-
-	private async void OnLogin()
-	{
-		Console.WriteLine($"📥 Entered Username: {Username}");
-		Console.WriteLine($"📥 Entered Password: {Password}");
-
-		if (_studentData == null)
-		{
-			Console.WriteLine("❌ _studentData is NULL!");
-			return;
-		}
-
-		Console.WriteLine($"📧 Stored Username: {_studentData.Student?.Email ?? "NULL"}");
-		Console.WriteLine($"🔑 Stored Password: {_studentData.Student?.Password ?? "NULL"}");
-
-		if (_studentData?.Student != null &&
-			Username.Trim() == _studentData.Student.Email.Trim() &&
-			Password.Trim() == _studentData.Student.Password.Trim())
-		{
-			string jsonData = JsonSerializer.Serialize(_studentData);
-			Preferences.Set("StudentData", jsonData);
-
-			await Shell.Current.DisplayAlert("Success", "Login successful!", "OK");
-			await Shell.Current.GoToAsync("///ProfilePage");
-		}
-		else
-		{
-			await Shell.Current.DisplayAlert("Error", "Invalid email or password", "OK");
-		}
-	}
+      if (_studentData?.Student != null)
+      {
+        Console.WriteLine("✅ JSON Loaded Successfully!");
+        Console.WriteLine($"📧 Loaded Username: {_studentData.Student.Email}");
+        Console.WriteLine($"🔑 Loaded Password: {_studentData.Student.Password}");
+      }
+      else
+      {
+        Console.WriteLine("❌ Failed to load student data.");
+      }
+    }
+    catch (Exception ex)
+    {
+      Console.WriteLine($"❌ Error loading student data: {ex.Message}");
+    }
+  }
 
 
-	public event PropertyChangedEventHandler? PropertyChanged;
-	protected virtual void OnPropertyChanged(string propertyName)
-	{
-		PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-	}
+  private async void OnLogin()
+  {
+    Console.WriteLine($"📥 Entered Username: {Username}");
+    Console.WriteLine($"📥 Entered Password: {Password}");
+
+    if (_studentData == null)
+    {
+      Console.WriteLine("❌ _studentData is NULL!");
+      return;
+    }
+
+    Console.WriteLine($"📧 Stored Username: {_studentData.Student?.Email ?? "NULL"}");
+    Console.WriteLine($"🔑 Stored Password: {_studentData.Student?.Password ?? "NULL"}");
+
+    if (_studentData?.Student != null &&
+      Username.Trim() == _studentData.Student.Email.Trim() &&
+      Password.Trim() == _studentData.Student.Password.Trim())
+    {
+      string jsonData = JsonSerializer.Serialize(_studentData);
+      Preferences.Set("StudentData", jsonData);
+
+      await Shell.Current.DisplayAlert("Success", "Login successful!", "OK");
+      await Shell.Current.GoToAsync("///ProfilePage");
+    }
+    else
+    {
+      await Shell.Current.DisplayAlert("Error", "Invalid email or password", "OK");
+    }
+  }
+  public void LoadStoredData()
+  {
+    if (Preferences.ContainsKey("StudentData"))
+    {
+      string jsonData = Preferences.Get("StudentData", string.Empty);
+      if (!string.IsNullOrEmpty(jsonData))
+      {
+        _studentData = JsonSerializer.Deserialize<StudentData>(jsonData);
+        Console.WriteLine("✅ Loaded stored student data.");
+      }
+    }
+  }
+
+
+
+  public event PropertyChangedEventHandler? PropertyChanged;
+  protected virtual void OnPropertyChanged(string propertyName)
+  {
+    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+  }
 }

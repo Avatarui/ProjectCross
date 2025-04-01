@@ -2,11 +2,86 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="RegSystem.Pages.Current"
+             BackgroundImageSource="univeresity.jpg"
              Title="Current">
-    <VerticalStackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-    </VerticalStackLayout>
+    <StackLayout Padding="20">
+        <Button Text="กลับ"
+                BackgroundColor="LightBlue"
+                TextColor="White"
+                HeightRequest="40"
+                WidthRequest="100"
+                VerticalOptions="Start"
+                HorizontalOptions="Start"
+                CornerRadius="5"
+                Margin="0,0,0,10"
+                Clicked="OnBackClicked"/>
+        <Label Text="ข้อมูลการลงทะเบียนปัจจุบัน"
+               FontSize="20"
+               FontAttributes="Bold"/>
+
+        <!-- ข้อมูลปีการศึกษา, เทอม, สถานะการลงทะเบียน, ค่าธรรมเนียม -->
+        <Label Text="ปีการศึกษา: 2024"
+               FontSize="16"/>
+        <Label Text="เทอม: 1"
+               FontSize="16"/>
+        <Label Text="สถานะ: ลงทะเบียนแล้ว"
+               FontSize="16"/>
+        <Label Text="ค่าธรรมเนียม: 25,000 บาท"
+               FontSize="16"/>
+
+        <Label Text="รายวิชาที่ลงทะเบียน"
+               FontSize="18"
+               FontAttributes="Bold"
+               Margin="0,10,0,0"/>
+
+        <CollectionView>
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Grid Padding="10"
+                          BackgroundColor="LightGray"
+                          Margin="0,2">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+
+                        <!-- ข้อมูลรายวิชา -->
+                        <Label Text="01418211"
+                               FontSize="14"
+                               FontAttributes="Bold"
+                               TextColor="Black"
+                               Grid.Column="0"/>
+                        <Label Text="โครงสร้างข้อมูลและอัลกอริทึม"
+                               FontSize="14"
+                               TextColor="Black"
+                               Grid.Row="1"
+                               Grid.Column="0"/>
+                        <Label Text="หน่วยกิต: 3"
+                               FontSize="14"
+                               TextColor="Black"
+                               Grid.Row="2"
+                               Grid.Column="0"/>
+
+                        <Button Text="ถอน"
+                                BackgroundColor="Red"
+                                TextColor="White"
+                                HeightRequest="40"
+                                WidthRequest="70"
+                                Grid.Column="1"
+                                Grid.RowSpan="3"
+                                VerticalOptions="Center"
+                                HorizontalOptions="End"
+                                CornerRadius="5"
+                                Margin="5,0,0,0"/>
+                    </Grid>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </StackLayout>
 </ContentPage>

@@ -9,7 +9,9 @@ namespace RegSystem.Pages
         public ProfilePage()
         {
             InitializeComponent();
+            BindingContext = new ProfilePageViewModel();
         }
+        
 
         private async void OnLogoutClicked(object sender, EventArgs e)
         {
@@ -23,21 +25,21 @@ namespace RegSystem.Pages
                 await Shell.Current.GoToAsync("///MainPage");
             }
         }
-        private async void OnSearchAndRegisterClicked(object sender, EventArgs e)
-        {
-            await Shell.Current.GoToAsync("///Registration");
+        // private async void OnSearchAndRegisterClicked(object sender, EventArgs e)
+        // {
+        //     await Shell.Current.GoToAsync("///Registration");
             
-        }
+        // }
 
         private async void OnCurrentRegistrationClicked(object sender, EventArgs e)
         {
-            await Shell.Current.GoToAsync("///Current");
+            await Shell.Current.GoToAsync("//Current");
         }
 
-        private async void OnPreviousRegistrationClicked(object sender, EventArgs e)
-        {
-             await Shell.Current.GoToAsync("///Previous");
-        }
+        // private async void OnPreviousRegistrationClicked(object sender, EventArgs e)
+        // {
+        //      await Shell.Current.GoToAsync("///Previous");
+        // }
 
         // private async void OnWithdrawClicked(object sender, EventArgs e)
         // {

@@ -106,43 +106,54 @@
                                    Spacing="15"
                                    Padding="20"
                                    VerticalOptions="Center">
+                     <!-- ข้อมูลลงทะเบียน เทอมปัจจุบัน -->
                      <Button Text="ข้อมูลลงทะเบียน เทอมปัจจุบัน"
                              BackgroundColor="#FFD700"
                              TextColor="Black"
                              FontSize="16"
                              CornerRadius="10"
                              HeightRequest="60"
-                             Clicked="OnCurrentRegistrationClicked"/>
+                             WidthRequest="200"
+                            HorizontalOptions="Center"
+                            Clicked="OnCurrentRegistrationClicked"
+            VerticalOptions="Center"/>
 
-                     <!-- ข้อมูลลงทะเบียน เทอมก่อนหน้า -->
-                     <Button Text="ข้อมูลลงทะเบียน เทอมก่อนหน้า"
-                             BackgroundColor="#FF438D12"
-                             TextColor="Black"
-                             FontSize="16"
-                             CornerRadius="10"
-                             HeightRequest="60"
-                             Clicked="OnPreviousRegistrationClicked"/>
+                            <!-- ข้อมูลลงทะเบียน เทอมก่อนหน้า -->
+                            <Button Text="ข้อมูลลงทะเบียน เทอมก่อนหน้า"
+                                    BackgroundColor="#FF438D12"
+                                    TextColor="Black"
+                                    FontSize="16"
+                                    CornerRadius="10"
+                                    HeightRequest="60"
+                                    WidthRequest="200" 
+                                   HorizontalOptions="Center"
+            VerticalOptions="Center"/>
 
-                     <!-- ค้นหาและลงทะเบียนรายวิชา -->
-                     <Button Text="ค้นหาและลงทะเบียนรายวิชา"
-                             BackgroundColor="#00AB55"
-                             TextColor="White"
-                             FontSize="16"
-                             CornerRadius="10"
-                             HeightRequest="60"
-                             Clicked="OnSearchAndRegisterClicked"/>
+                                   <!-- ค้นหาและลงทะเบียนรายวิชา -->
+                                   <Button Text="ค้นหาและลงทะเบียนรายวิชา"
+                                           BackgroundColor="#00AB55"
+                                           TextColor="White"
+                                           FontSize="16"
+                                           CornerRadius="10"
+                                           HeightRequest="60"
+                                           WidthRequest="200"
+                                           HorizontalOptions="Center"
+                                           VerticalOptions="Center"/>
 
-                     <!-- ถอนรายวิชา -->
-                     <!-- <Button Text="ถอนรายวิชา&#10;ถึง 31 มี.ค. 2568"
-                             BackgroundColor="Red"
-                             TextColor="White"
-                             FontSize="16"
-                             CornerRadius="10"
-                             HeightRequest="60"
-                             Clicked="OnWithdrawClicked"/> -->
-
-                     <!-- ต่อไปนี้คุณสามารถเพิ่ม CollectionView สำหรับแสดงรายวิชาได้ -->
+                                   <!-- ถอนรายวิชา -->
+                                   <Button Text="ถอนรายวิชา"
+                                           BackgroundColor="Red"
+                                           TextColor="White"
+                                           FontSize="16"
+                                           CornerRadius="10"
+                                           HeightRequest="60"
+                                           WidthRequest="200"
+                                           HorizontalOptions="Center"
+                                           VerticalOptions="Center"/>
               </VerticalStackLayout>
+
+
+
        </Grid>
 
 </ContentPage>
